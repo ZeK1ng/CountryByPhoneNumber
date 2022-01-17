@@ -23,16 +23,13 @@ public class CountryNumberMapperSingleton {
             logger.error("Can`t load data for codes. Error: "+ ex);
         }
         System.out.println(data);
-        logger.info("Data Loaded");
+        logger.info("Country number mapper Loaded");
     }
     public static CountryNumberMapperSingleton getInstance(){
         if(countryNumberMapInstance == null){
             countryNumberMapInstance = new CountryNumberMapperSingleton();
         }
         return countryNumberMapInstance;
-    }
-    public  String getCode(String key){
-        return data.get(key);
     }
     public  String getCountry(String value){
         try {

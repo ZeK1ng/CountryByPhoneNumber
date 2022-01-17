@@ -7,7 +7,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 public class CountryNameMapperSingleton {
     Logger logger = LoggerFactory.getLogger(CountryNameMapperSingleton.class);
@@ -23,7 +22,7 @@ public class CountryNameMapperSingleton {
             logger.error("Can`t load data for codes. Error: "+ ex);
         }
         System.out.println(data);
-        logger.info("Data Loaded");
+        logger.info("Country name mapper Data Loaded");
     }
     public static CountryNameMapperSingleton getInstance(){
         if(countryNameMapperInstance == null){
@@ -31,7 +30,7 @@ public class CountryNameMapperSingleton {
         }
         return countryNameMapperInstance;
     }
-    public  String getCode(String key){
+    public  String getCountryFullName(String key){
         if(data.containsKey(key)){
             return data.get(key);
         }

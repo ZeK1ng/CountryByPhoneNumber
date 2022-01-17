@@ -10,6 +10,11 @@ public class CountryPhoneServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CountryPhoneServiceApplication.class, args);
+		initializeSingletons();
+
+	}
+
+	private static void initializeSingletons() {
 		CountryNameMapperSingleton countryNameMapperSingleton = CountryNameMapperSingleton.getInstance();
 		CountryNumberMapperSingleton countryNumberMapperSingleton = CountryNumberMapperSingleton.getInstance();
 	}
